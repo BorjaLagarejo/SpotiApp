@@ -3,8 +3,13 @@
     <img class="center" src="https://i.emezeta.com/weblog/nyan-cat/nyan-cat-animated.gif" alt="">
 </div>
 <div class="col-12" *ngIf="cargado">
-    <p> Total Resultados : {{ todo.totalResults }} </p>
-    <ul>
-      <li *ngFor="let usuario of todo.results"> {{ usuario.name }} - {{usuario.email}}</li>
-    </ul>
+    <div class="card m-2" style=" width: 100%;" *ngFor="let dato of datos">
+            <div class="card-body" >
+                <h5 class="card-title">{{ dato.autor }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ dato.estado }}</h6>
+                <p class="card-text" [innerHTML] = dato.texto></p>
+                <a href="#" class="card-link">Aceptar</a>
+                <a href="#" class="card-link">Rechazar</a>
+            </div>
+    </div>
 </div>
