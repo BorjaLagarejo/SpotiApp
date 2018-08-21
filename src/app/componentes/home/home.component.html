@@ -1,15 +1,17 @@
-<div class="col-md-4 ml-md-auto" *ngIf="!cargado">
-    <p>Cargando...</p>
-    <img class="center" src="https://i.emezeta.com/weblog/nyan-cat/nyan-cat-animated.gif" alt="">
-</div>
-<div class="col-12" *ngIf="cargado">
-    <div class="card m-2" style=" width: 100%;" *ngFor="let dato of datos">
-            <div class="card-body" >
-                <h5 class="card-title">{{ dato.autor }}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{{ dato.estado }}</h6>
-                <p class="card-text" [innerHTML] = dato.texto></p>
-                <a href="#" class="card-link">Aceptar</a>
-                <a href="#" class="card-link">Rechazar</a>
-            </div>
+<div class="col-12">
+    <div class="alert alert-danger" role="alert" *ngIf="error">
+        A simple danger alert—check it out!
+      </div>
+    <div class="card-columns 5">
+        <div class="card" *ngFor="let cancion of nuevasConaciones">
+          <div class="imagen">
+            <img class="card-img-top" src="{{ cancion.photoUrl }}" alt="Card image cap">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ cancion.name }}</h5>
+            <!-- <span class="badge badge-pill badge-primary" *ngFor="let valor of cancion.artists">{{ valor.name }}</span>-->
+            <p class="card-text"><small class="text-muted">{{ cancion.email}}</small></p>
+          </div>
+        </div>
     </div>
 </div>

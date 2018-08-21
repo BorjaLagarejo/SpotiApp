@@ -1,0 +1,12 @@
+.imagen {
+    overflow: hidden;
+    object-fit: cover;
+    }
+    
+    .card-img-top {
+    transition: transform 0.1s ease;
+    }
+    
+    .imagen:hover .card-img-top {
+    transform: scale(1.2);
+    }

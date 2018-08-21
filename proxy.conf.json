@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+      "target": "https://foro.gameflix.es",
+      "secure": false,
+      "changeOrigin": true
+    }
+  }
