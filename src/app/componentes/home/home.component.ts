@@ -5,18 +5,18 @@ import { SpotifyService } from '../../servicio/spotify.service';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  styles: []
 })
 export class HomeComponent implements OnInit {
 
-  nuevasConaciones: any[] = [];
+  nuevasCanciones: any[] = [];
   error = false;
+  carga = false;
 
   constructor( private spotify: SpotifyService) {
 
-    this.spotify.getNew().subscribe( (data: any) => {
-      console.log('El data -> ', data);
-      this.nuevasConaciones = data.results;
+    this.spotify.getNewReleases().subscribe( (data: any) => {
+      this.nuevasCanciones = data;
+      this.carga = true;
     });
   }
 

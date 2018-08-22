@@ -1,16 +1,17 @@
-<div class="col-12">
+<app-carga *ngIf="!carga"></app-carga> 
+<div class="col-12 animated fadeIn fast" *ngIf="carga" >
     <div class="alert alert-danger" role="alert" *ngIf="error">
         A simple danger alert—check it out!
       </div>
-    <div class="card-columns 5">
-        <div class="card" *ngFor="let cancion of nuevasConaciones">
+    <div class="card-columns">
+        <div class="card" *ngFor="let cancion of nuevasCanciones">
           <div class="imagen">
-            <img class="card-img-top" src="{{ cancion.photoUrl }}" alt="Card image cap">
+            <img class="card-img-top" src="{{ cancion.images[0].url}}" alt="Card image cap">
           </div>
           <div class="card-body">
             <h5 class="card-title">{{ cancion.name }}</h5>
-            <!-- <span class="badge badge-pill badge-primary" *ngFor="let valor of cancion.artists">{{ valor.name }}</span>-->
-            <p class="card-text"><small class="text-muted">{{ cancion.email}}</small></p>
+            <span class="badge badge-pill badge-primary" *ngFor="let valor of cancion.artists">{{ valor.name }}</span>
+            <p class="card-text"><small class="text-muted">{{ cancion.release_date }}</small></p>
           </div>
         </div>
     </div>

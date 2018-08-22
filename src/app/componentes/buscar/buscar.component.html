@@ -1,3 +1,22 @@
-<p>
-  buscar works!
-</p>
+<div class="row">
+  <div class="col">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">♫</span>
+      </div>
+      <input #vBusqueda type="text" (keyup)="buscar(vBusqueda.value)" class="form-control" placeholder="¿ Que canción quieres escuchar ?">
+    </div>
+  </div>
+  <div class="card-columns mt-3">
+    <div class="card" *ngFor="let item of artistas">
+      <div class="imagen">
+        <img class="card-img-top" src="{{ item.images | noimg }} " alt="Card image cap">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ item.name }}</h5>
+        <span class="badge badge-pill badge-primary" *ngFor="let valor of item.artists">{{ valor.name }}</span>
+        <p class="card-text"><small class="text-muted">{{ item.release_date }}</small></p>
+      </div>
+    </div>
+  </div>
+</div>

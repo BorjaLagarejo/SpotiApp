@@ -1,0 +1,27 @@
+ .pre-loader-linear {
+    position:absolute;
+    height:4px;
+    background:#00716d;
+    overflow:hidden;
+    margin-top: -50px;
+    left: 0;
+    width: 100%;
+  }
+  .progress {
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    right:50%;
+    background:#2ac1bc;
+    transform:translate(-100%, 0);
+    animation:1.5s loading infinite ease-in;
+  }
+  @keyframes loading {
+    0% {
+      transform:translate(-100%, 0);
+    }
+    100% {
+      transform:translate(200%, 0);
+    }
+  }
