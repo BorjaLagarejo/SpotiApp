@@ -4,14 +4,14 @@
         A simple danger alert—check it out!
       </div>
     <div class="card-columns">
-        <div class="card" *ngFor="let cancion of nuevasCanciones">
+        <div class="card" *ngFor="let item of nuevasCanciones">
           <div class="imagen">
-            <img class="card-img-top" src="{{ cancion.images[0].url}}" alt="Card image cap">
+            <img class="card-img-top" src="{{ item.images | noimg }} " alt="Card image cap">
           </div>
           <div class="card-body">
-            <h5 class="card-title">{{ cancion.name }}</h5>
-            <span class="badge badge-pill badge-primary" *ngFor="let valor of cancion.artists">{{ valor.name }}</span>
-            <p class="card-text"><small class="text-muted">{{ cancion.release_date }}</small></p>
+            <h5 class="card-title">{{ item.name }}</h5>
+            <span class="badge badge-pill badge-primary" *ngFor="let valor of item.artists">{{ valor.name }}</span>
+            <p class="card-text"><small class="text-muted">{{ item.release_date }}</small></p>
           </div>
         </div>
     </div>
