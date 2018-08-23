@@ -12,7 +12,7 @@ export class SpotifyService {
   getConsulta(query: string) {
     const url = 'https://api.spotify.com/v1/' + query;
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQAcuAQ2nQqEIDJP4RuuU1eL4uU-PjNH6RWHhdCrLhpKYzEP88mfzIF2XjVB2NIWcfph7Qx6jQTesmA-yh4'
+      'Authorization': 'Bearer BQDgrGLqxXdpv9MpOtPJ-5E_GSO9KZxIjCWXrF6I8QNUUUP9tvaEHKg1pdgyh2IxqZytjkJh8DcTiQKVJOE'
     });
 
     return this.http.get(url, { headers });
